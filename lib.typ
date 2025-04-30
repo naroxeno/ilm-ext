@@ -74,14 +74,6 @@
   // Set the document's metadata.
   set document(title: title, author: author)
 
-  // Set the body font.
-  set text(size: 12pt) // default is 11pt
-
-  // Set raw text font.
-  // Default is Fira Mono at 8.8pt
-  show raw: set text(font: ("Iosevka", "Fira Mono"), size: 9pt)
-
-  // Configure page size and margins.
   set page(
     paper: paper-size,
     margin: (bottom: 1.75cm, top: 2.25cm),
@@ -199,10 +191,6 @@
   // Wrap `body` in curly braces so that it has its own context. This way show/set rules
   // will only apply to body.
   {
-    // Configure heading numbering.
-    set heading(numbering: "1.")
-
-    // Start chapters on a new page.
     show heading.where(level: 1): it => {
       if chapter-pagebreak {
         pagebreak(weak: true)
